@@ -45,7 +45,8 @@ class BloodModel extends Model
         $query=$db->query('SELECT blood.id,blood.username,blood.mobile,blood.blood_group,blood_group.name
         FROM blood
         INNER JOIN blood_group ON blood.blood_group=blood_group.id
-        WHERE blood.status=1');
+        WHERE blood.status=1
+        order by blood.id desc');
         return $query->getResult();
     }
 }
